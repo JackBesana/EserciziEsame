@@ -23,11 +23,11 @@ public class DatiCondivisi {
         sem2 = new Semaphore(0);
     }
 
-    public void waitSem1() {
+    public void daiPermesso1() {
         sem1.release();
     }
 
-    public void signalSem1() {
+    public void chiediPermesso1() {
         try {
             sem1.acquire();
         } catch (InterruptedException ex) {
@@ -35,11 +35,11 @@ public class DatiCondivisi {
         }
     }
 
-    public void waitSem2() {
+    public void daiPermesso2() {
         sem2.release();
     }
 
-    public void signalSem2() {
+    public void chiediPermesso2() {
         try {
             sem2.acquire();
         } catch (InterruptedException ex) {

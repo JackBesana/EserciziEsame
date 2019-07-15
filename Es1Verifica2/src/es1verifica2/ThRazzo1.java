@@ -25,8 +25,8 @@ public class ThRazzo1 extends Thread {
     public void run() {
         Random rand = new Random();
         System.out.println("razzo 1 PARTITO");
-        datiC.signalSem1();
-
+        
+        datiC.daiPermesso1();
         try {
             Thread.sleep(rand.nextInt(1000) + 1000);
         } catch (InterruptedException ex) {

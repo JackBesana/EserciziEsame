@@ -23,10 +23,10 @@ public class ThRoccia1 extends Thread {
 
     @Override
     public void run() {
+        datiC.chiediPermesso1();
         Random rand = new Random();
         System.out.println("roccia 1 COLPITA ");
-        System.out.println("INIZIO DISINTEGRAZIONE roccia 1");
-        datiC.waitSem1();
+        System.out.println("INIZIO DISINTEGRAZIONE roccia 1");        
         try {
             Thread.sleep(rand.nextInt(1000) + 1000);
         } catch (InterruptedException ex) {
