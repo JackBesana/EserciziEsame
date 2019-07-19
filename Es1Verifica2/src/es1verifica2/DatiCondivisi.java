@@ -17,10 +17,13 @@ public class DatiCondivisi {
 
     private Semaphore sem1;
     private Semaphore sem2;
+    private Semaphore finito;
+    int contatore = 0;
 
     public DatiCondivisi() {
         sem1 = new Semaphore(0);
         sem2 = new Semaphore(0);
+        finito = new Semaphore(0);
     }
 
     public void daiPermesso1() {
@@ -44,6 +47,25 @@ public class DatiCondivisi {
             sem2.acquire();
         } catch (InterruptedException ex) {
             Logger.getLogger(DatiCondivisi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void daiPermessoFinito() {
+        finito.release();
+    }
+
+    public void chiediPermessoFinito() {
+        try {
+            finito.acquire();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(DatiCondivisi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void controllaFinito() {
+        contatore+=1;
+        if(contatore==2){
+            daiPermessoFinito();
         }
     }
 }

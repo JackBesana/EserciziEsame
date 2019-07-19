@@ -19,7 +19,6 @@ public class Es1Verifica2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-          try {
             DatiCondivisi datiC = new DatiCondivisi();
             
             ThRazzo1 th1 = new ThRazzo1(datiC);
@@ -32,14 +31,18 @@ public class Es1Verifica2 {
             th3.start();
             th4.start();
             
-            th1.join();
-            th2.join();
-            th3.join();
-            th4.join();
+//            th1.join();
+//            th2.join();
+//            th3.join();
+//            th4.join();
+            datiC.chiediPermessoFinito();
+            th1.interrupt();
+            th2.interrupt();
+            th3.interrupt();
+            th4.interrupt();
+            
             System.out.println("ROCCE DISTRUTTE");
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Es1Verifica2.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }
     
 }

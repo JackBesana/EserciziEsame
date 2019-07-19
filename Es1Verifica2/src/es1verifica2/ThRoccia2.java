@@ -35,5 +35,6 @@ public class ThRoccia2 extends Thread {
         }
 
         System.out.println("FINE DISINTEGRAZIONE roccia 2 ");
+        datiC.controllaFinito();
     }
 }
